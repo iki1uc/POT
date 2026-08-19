@@ -1,9 +1,13 @@
-[BEN.tmp]
-version = 1.0
-type    = "praesens-tmp"
-
-tmp.name = "BEN.tmp"
-tmp.role = "ich"
-tmp.mode = ["swap","handover","leave"]
-tmp.output = "BEN.tmp.final"
-tmp.state  = "active"
+// TMP.3 – BEN + TRIBBLE-USE
+const TMP_3 = {
+  name: 'TMP.3',
+  modus: 'BEN',
+  tribble: true,
+  duo: 'oben dooru',
+  action: (input) => ({
+    bewertet: input,
+    tribble: 'doppelte Nutzung',
+    duo: 'oben dooru',
+    status: 'balanciert'
+  })
+};
