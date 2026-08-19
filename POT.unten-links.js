@@ -1,4 +1,4 @@
-// POT.oben-links.js – QI · Der Anfang · Fluss
-export const QI = {
-  fluss: (wert) => ({ q: wert, zustand: 'fließt', ort: 'oben-links' })
+// POT.unten-links.js – Q4 · Tiefe · Evolution
+export const Q4 = {
+  tiefe: (wert) => ({ evolution: wert * 1.3, richtung: 'abwärts', ort: 'unten-links' })
 };
