@@ -1,9 +1,11 @@
-[NE.tmp]
-version = 1.0
-type    = "praesens-tmp"
-
-tmp.name = "NE.tmp"
-tmp.role = "er"
-tmp.mode = ["swap","handover","leave"]
-tmp.output = "NE.tmp.final"
-tmp.state  = "active"
+// TMP.2 – NE + WORK
+const TMP_2 = {
+  name: 'TMP.2',
+  modus: 'NE',
+  work: true,
+  action: (input) => ({
+    neutralisiert: input,
+    work: 'produktive Klärung',
+    status: 'klar'
+  })
+};
