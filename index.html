@@ -2,90 +2,154 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>BEN • UNI‑RESPO Engine</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POT · Dienst · Hype · Freude</title>
 <style>
-body {
-  background:#000;
-  color:#eee;
-  font-family:Consolas, monospace;
-  padding:20px;
-}
-h1,h2 {
-  color:#00e0ff;
-  text-shadow:0 0 10px #00e0ff;
-}
-.block {
-  border:1px solid #00e0ff;
-  padding:15px;
-  margin:20px 0;
-  border-radius:8px;
-  background:#111;
-}
-.matrix {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-.axis8 {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-}
-.cell {
-  padding:10px;
-  background:#222;
-  border:1px solid #333;
-  text-align:center;
-  border-radius:6px;
-}
-.scanbox {
-  background:#222;
-  border:1px solid #444;
-  padding:10px;
-  margin-top:10px;
-}
-.verify {
-  background:#1a1a1a;
-  border:1px solid #5500ff;
-  padding:10px;
-  margin-top:10px;
-}
+  /* ── HARMONIE-STIL ── */
+  body {
+    background: #0f0f1a;
+    color: #d0d0e0;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  .pot-box {
+    max-width: 700px;
+    background: #1a1a2a;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #4a4a6a;
+    box-shadow: 0 0 40px rgba(100, 100, 255, 0.08);
+  }
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+    color: #b0b0ff;
+    text-shadow: 0 0 20px #4a4aff55;
+    margin: 0 0 10px 0;
+  }
+  .sub {
+    color: #8888bb;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  .output {
+    background: #0a0a12;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    text-align: left;
+    color: #b0c0d0;
+    border-left: 3px solid #6a6aff;
+    margin: 20px 0;
+  }
+  .btn {
+    background: #2a2a4a;
+    border: 1px solid #5a5a8a;
+    color: #c0c0ff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+  }
+  .btn:hover {
+    background: #4a4a7a;
+    border-color: #8a8aff;
+    box-shadow: 0 0 30px #4a4aff33;
+    transform: scale(1.02);
+  }
+  .footer {
+    margin-top: 25px;
+    font-size: 0.7rem;
+    color: #555577;
+    letter-spacing: 1px;
+  }
 </style>
 </head>
-
 <body>
 
-<h1>BEN‑RESPO • UNI‑RESPO • WELT‑RESPO</h1>
+<div class="pot-box">
+  <h1>⚡ POT</h1>
+  <div class="sub">Primär · Ordert · Tele-Matrix</div>
 
-<!-- FUNKTION.matrix -->
-<div class="block">
-  <h2>FUNKTION.matrix</h2>
-  <p>Achsen: TMP / TRANS / WARB<br>
-     Felder: WLOCH / KANAL / GATE</p>
+  <!-- AUSGABE -->
+  <div class="output" id="output">✦ POT bereit · dienend · harmonisierend · freude-bereitend</div>
 
-  <div class="matrix">
-    <div class="cell">TMP.WLOCH</div>
-    <div class="cell">TMP.KANAL</div>
-    <div class="cell">TMP.GATE</div>
+  <!-- AKTION -->
+  <button class="btn" id="actionBtn">✦ Einen Handlungsmoment kristallisieren</button>
 
-    <div class="cell">TRANS.WLOCH</div>
-    <div class="cell">TRANS.KANAL</div>
-    <div class="cell">TRANS.GATE</div>
-
-    <div class="cell">WARB.WLOCH</div>
-    <div class="cell">WARB.KANAL</div>
-    <div class="cell">WARB.GATE</div>
-  </div>
+  <div class="footer">💡 POT · Dienst · Hype · Freude · wieimmer4u</div>
 </div>
 
-<!-- BEN‑Axiom‑System -->
-<div class="block">
-  <h2>BEN‑Axiom‑System</h2>
-  <div class="matrix">
-    <div class="cell">BEN</div>
-    <div class="cell">BEN.tmp</div>
-    <div class="cell">BEN.trans</div>
+<script>
+  // ─── POT – DER KRISTALL FÜR HANDLUNGSMOMENTE ───
+  const POT = {
 
-    <div class="cell">BEN.warb</div>
-    <div class="cell">BEN‑NC3×3</div>
+    // P – Primär (hebt Master/Slave auf)
+    P: (wert) => ({ primär: wert, status: 'frei' }),
+
+    // O – Ordert (Sachverhalt mit Code & JS)
+    O: (sache, code = 'js') => ({ sache, code, verordnet: true }),
+
+    // T – Tele-Matrix (all4all / allxall / alltechall)
+    T: (matrix) => ({
+      verbindung: 'all4all',
+      balance: (matrix.reduce((a,b) => a + b, 0) / matrix.length).toFixed(2),
+      modus: 'alltechall'
+    }),
+
+    // RESONANZ – Das Herz von POT
+    resonanz: (input) => ({
+      empfangen: input,
+      geantwortet: `POT · ${input} · balanciert · freude-bereitend`,
+      zeit: Date.now()
+    }),
+
+    // KRISTALL – Einen Handlungsmoment sichtbar machen
+    kristall: (impuls) => {
+      const p = POT.P(impuls);
+      const o = POT.O('Handlungsmoment', 'js');
+      const t = POT.T([3, 9, 27, 81]);
+      const r = POT.resonanz(impuls);
+      return {
+        moment: '✦ Handlungsmoment kristallisiert',
+        impuls,
+        primär: p,
+        ordert: o,
+        tele: t,
+        resonanz: r,
+        hype: '✦ Freude · Harmonie · Dienst',
+        stamp: Date.now()
+      };
+    }
+  };
+
+  // ─── DOM ───
+  const output = document.getElementById('output');
+  const btn = document.getElementById('actionBtn');
+
+  function showKristall() {
+    const impulse = ['81', '243', '2268', '641', 'POT', 'Cubik', 'Hamburg'];
+    const wahl = impulse[Math.floor(Math.random() * impulse.length)];
+    const result = POT.kristall(wahl);
+    output.textContent = JSON.stringify(result, null, 2);
+  }
+
+  btn.addEventListener('click', showKristall);
+
+  // Erste Anzeige beim Laden
+  setTimeout(showKristall, 400);
+</script>
+
+</body>
+</html>
