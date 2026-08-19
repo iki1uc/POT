@@ -1,4 +1,4 @@
-// POT.oben-links.js – QI · Der Anfang · Fluss
-export const QI = {
-  fluss: (wert) => ({ q: wert, zustand: 'fließt', ort: 'oben-links' })
+// POT.mitte-links.js – AH · Verbindung · Eingang
+export const AH = {
+  verbinden: (wert) => ({ eingang: wert, seite: 'links', ort: 'mitte-links' })
 };
